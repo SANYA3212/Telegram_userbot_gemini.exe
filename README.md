@@ -44,41 +44,6 @@ Telegram (api_id / api_hash)
 • Параметр session_file — имя файла сессии. Если указать только имя
   (например, "userbot_session.session"), файл будет храниться рядом с .exe.
 
-Файлы конфигурации (создаются автоматически)
---------------------------------------------
-api_text_model.json
-{
-  "provider": "gemini",
-  "base_url": "https://generativelanguage.googleapis.com",
-  "api_key": "ВАШ_GOOGLE_API_KEY",
-  "model": "gemini-1.5-flash",
-  "rpm_limit": 45
-}
-Пояснения:
-• api_key — ключ из Google AI Studio.
-• model — имя модели Gemini (например, gemini-1.5-flash / gemini-1.5-pro).
-• rpm_limit — ограничение запросов в минуту на стороне клиента
-  (чтобы не получать ошибки 429 при бесплатных квотах).
-
-telegram_api.json
-{
-  "api_id": 1234567,
-  "api_hash": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "session_file": "userbot_session.session"
-}
-Пояснения:
-• При первом входе Telethon создаст файл сессии. Если путь не абсолютный,
-  файл будет размещён рядом с .exe.
-
-SYSTEM_PROMPT.json
-{
-  "system_prompt": "Здесь ваш системный промпт...",
-  "friends": [
-    { "name": "SANYA", "desc": "твой начальник и создатель..." },
-    { "name": "Сасочек", "desc": "лучший друг..." }
-  ],
-  "noname": { "name": "Noname", "desc": "собеседник не в списке — общайся по контексту" }
-}
 Пояснения:
 • Список «friends» формирует выпадающий список «С кем общаемся».
 • Можно менять состав и описания; приложение подхватит их при следующем старте.
